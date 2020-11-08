@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+  apiUrl1: 'https://routineorganizerapi.azurewebsites.net/v1/',
+  apiUrl: 'https://localhost:5001/v1/'
 };
