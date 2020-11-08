@@ -1,3 +1,83 @@
-<p>
-  agenda-form works!
-</p>
+<div style="padding-top: 15px;"> 
+
+  <div style="padding-top: 20px;padding-bottom: 20px;">
+      <app-quotes></app-quotes>
+  </div>
+<div class="row">
+  <div class="col-3">
+          <div class="col-12">
+                  <label></label>
+          </div>
+          <app-datepickermonth (selectedDate)="onChangeDate($event)"></app-datepickermonth>      
+          <div class="row">
+              <div class="col-12">
+                  <button form="formAgenda" class="btn btn-primary" [disabled]="!agendaForm.valid"><i class="fa fa-save"></i></button>
+                  <span style="padding-left: 10px;">
+                      <button (click)="deleteAgenda()" class="btn btn-primary" [disabled]="!agendaForm.valid"><i class="fa fa-trash"></i></button>
+                  </span>
+
+              </div>
+      </div>                                      
+    
+    
+  </div>
+  <div class="col-9">
+      <form [formGroup]="agendaForm" (ngSubmit)="onSubmit()" id="formAgenda">
+          <div class="row">
+              <div class="col-12">
+                  <input type="hidden" formControlName="id"/>   
+              </div>
+
+              <div class="col-6">
+  
+                  <div class="form-group">
+                          <label for="FormControlTextareaThisMonthsPriority">THIS MONTH'S PRIORITY</label>
+                          <textarea class="form-control" id="FormControlTextareaThisMonthsPriority" rows="6" formControlName="priorities"></textarea>
+                  </div>               
+
+              </div>
+  
+              <div class="col-6">
+  
+                      <div class="form-group">
+                              <label for="FormControlTextareaThisMonthsBest">THIS MONTH'S ACTIVITIES</label>
+                              <textarea class="form-control" id="FormControlTextareaThisMonthsBest" rows="6" formControlName="activities" ></textarea>
+                      </div>
+              </div>
+          </div>     
+          <div class="row">
+  
+                  <div class="col-6">
+          
+                      <div class="form-group">
+                              <label for="FormControlTextareaThisMonthsProject">THIS MONTH'S PROJECTS</label>
+                              <textarea class="form-control" id="FormControlTextareaThisMonthsProject" rows="6" formControlName="projects" ></textarea>
+                      </div>
+                  </div>
+          
+                  <div class="col-6">
+          
+                          <div class="form-group">
+                                  <label for="FormControlTextareaThisMonthsProud">I AM PROUD OF...</label>
+                                  <textarea class="form-control" id="FormControlTextareaThisMonthsProud" rows="6" formControlName="prouds"></textarea>
+                          </div>
+                  </div>
+          </div>    
+          <div class="row">
+              <div class="col-12">
+                  <div class="form-group">
+                          <label for="FormControlTextareaThisMonthsNote">NOTES & INSPIRATION</label>
+                          <textarea class="form-control" id="FormControlTextareaThisMonthsNote" rows="5"  formControlName="notes"></textarea>                  
+                  </div>
+              </div>
+          </div> 
+               
+      </form>
+  
+      
+       <!-- app-form-debug [form]="agendaForm"></!-->
+  </div>
+
+</div>
+
+</div>
